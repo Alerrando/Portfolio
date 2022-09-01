@@ -2,7 +2,7 @@ import foto from "./image/imagem-princ.jpg";
 
 export function Main() {
   return (
-    <main className={"w-full alinhamento h-[72.5vh] md:h-[91.1vh] img-fundo"}>
+    <main className={"w-full alinhamento h-screen img-fundo"}>
       <div className="mx-12 md:mx-20 w-[420px] text-center chegando">
         <p className="text-[#f8f8ff] text-xl md:text-base font-bold font-playfair">
           Olá, meu nome é
