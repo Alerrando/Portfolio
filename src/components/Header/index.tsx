@@ -16,13 +16,13 @@ export function Header() {
   }
 
   return (
-    <header className="w-full bg-princ flex justify-center fixed">
+    <header className="w-full bg-princ flex justify-center">
       <div className="w-[92%] alinhamento justify-between py-2">
         <div className="w-[45px] h-[45px]">
           <img src={logo} alt="icone do site" className="w-full h-full cursor-pointer" />
         </div>
 
-        <nav className={`absolute h-screen w-48 top-0 right-0 md:relative md:h-full md:flex md:w-auto transition-all ${menu}`}>
+        <nav className={`absolute h-screen w-48 top-0 right-0 md:relative md:h-full md:flex md:w-auto transition-all z-10 ${menu}`}>
           <div className="w-full h-full grid grid-rows-sidebar bg-[#2e3238] md:bg-transparent md:flex">
             <header className="alinhamento justify-end mr-4 cursor-pointer md:hidden">
               <X size={32} className="text-white" weight="bold" onClick={() => handleMenu()} />
