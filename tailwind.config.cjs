@@ -10,6 +10,9 @@ module.exports = {
       gridTemplateRows: {
         "sidebar": "10% 70% 15%",
       },
+      backgroundImage: {
+        "image-princ": "url('./src/components/Main/image/imagem-princ.jpg')",
+      }
     },
   },
   plugins: [],
