@@ -5,7 +5,6 @@ module.exports = {
     extend: {
       colors: {
         princ: "#393E46",
-        sombreamento: "rgba(0, 0, 0, 0.5)",
       },
       fontFamily: {
         roboto: "'Roboto', sans-serif",
@@ -15,6 +14,9 @@ module.exports = {
       gridTemplateRows: {
         sidebar: "10% 70% 15%",
       },
+      gridTemplateColumns: {
+        "projetos": "repeat(auto-fit, minmax(300px, 1fr));",
+      }
     },
   },
   plugins: [],
