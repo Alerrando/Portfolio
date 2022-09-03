@@ -69,8 +69,8 @@ const projetos = [
 export function Projetos() {
   return (
     <section>
+      <a name="projetos"></a>
       <Titulo titulo={"Projetos"} />
-
       <div className="max-w-[1200px] mx-auto px-4 py-8">
         <div className="grid grid-cols-projetos gap-6">
           {projetos.map((projeto, index) => (

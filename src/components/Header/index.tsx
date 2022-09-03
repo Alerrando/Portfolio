@@ -31,7 +31,7 @@ export function Header() {
             <main className="h-52 flex mx-auto mt-8 mb-20 md:items-center md:m-0 md:h-full">
               <ul className=" block md:flex md:gap-6 text-white">
                 <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
-                  <a href="#">Projetos</a>
+                  <a href="#projetos">Projetos</a>
                 </li>
                 <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
                   <a href="#">Sobre</a>
