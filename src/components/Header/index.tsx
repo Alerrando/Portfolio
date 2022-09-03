@@ -16,7 +16,7 @@ export function Header() {
   }
 
   return (
-    <header className="w-full bg-princ fixed">
+    <header className="w-full bg-princ fixed z-10">
       <div className="w-full alinhamento justify-between py-2 px-4 md:px-16">
         <div className="w-[45px] h-[45px]">
           <img src={logo} alt="icone do site" className="w-full h-full cursor-pointer" />
