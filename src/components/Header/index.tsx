@@ -6,7 +6,6 @@ import {
   YoutubeLogo,
 } from "phosphor-react";
 import { useState } from "react";
-import logo from "./image/favicon.ico";
 
 export function Header() {
   const [menu, setMenu] = useState("hidden");
@@ -16,10 +15,10 @@ export function Header() {
   }
 
   return (
-    <header className="w-full bg-princ fixed z-10">
+    <header className="w-full bg-princ fixed z-20">
       <div className="w-full alinhamento justify-between py-2 px-4 md:px-16">
         <div className="w-[45px] h-[45px]">
-          <img src={logo} alt="icone do site" className="w-full h-full cursor-pointer" />
+          <img src='favicon.ico' alt="icone do site" className="w-full h-full cursor-pointer" />
         </div>
 
         <nav className={`fixed h-screen w-48 top-0 right-0 md:relative md:h-full md:flex md:w-auto transition-all z-10 ${menu}`}>
@@ -34,7 +33,7 @@ export function Header() {
                   <a href="#projetos">Projetos</a>
                 </li>
                 <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
-                  <a href="#">Sobre</a>
+                  <a href="#sobre">Sobre</a>
                 </li>
                 <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
                   <a href="#">Contato</a>

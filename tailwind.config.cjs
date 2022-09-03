@@ -16,7 +16,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         "projetos": "repeat(auto-fit, minmax(300px, 1fr));",
-      }
+      },
     },
   },
   plugins: [],
