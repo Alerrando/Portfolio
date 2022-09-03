@@ -42,16 +42,16 @@ export function Projetos() {
             <>
               <div className="max-h-[200px] relative text-center group">
                 <div className="w-full h-full">
-                  <img src={`/src/public/projeto${index+1}.png`} alt="" />
+                  <img src={`projeto${index+1}.png`} alt="" />
                 </div>
 
                 <div className="absolute w-full border-none outline-none ease-in-out bottom-0 py-4 md:hidden md:group-hover:block transition-all">
                   <div className="alinhamento justify-center pb-8 gap-16 text-white">
                     <a href={projetos[index].githubSite}>
-                      <img src={'/src/public/github-svgrepo-com.svg'} alt="" />
+                      <img src={'github-svgrepo-com.svg'} alt="" />
                     </a>
                     <a href={projetos[index].desktopSite}>
-                      <img src={'/src/public/desktop-svgrepo-com.svg'} alt="" />
+                      <img src={'desktop-svgrepo-com.svg'} alt="" />
                     </a>
                   </div>
                   <h2 className="font-roboto text-xl font-bold text-[#20b2aa]">
