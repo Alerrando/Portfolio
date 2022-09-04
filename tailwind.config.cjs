@@ -10,6 +10,7 @@ module.exports = {
         roboto: "'Roboto', sans-serif",
         playfair: "'Playfair Display', serif",
         glory: "'Glory', sans-serif",
+        times: "'Times New Roman', sans-serif",
       },
       gridTemplateRows: {
         sidebar: "10% 70% 15%",
