@@ -2,7 +2,7 @@ import foto from "./image/imagem-princ.jpg";
 
 export function Main() {
   return (
-    <main className="w-full alinhamento md:grid h-screen overflow-y-auto">
+    <main className="w-full alinhamento md:grid h-screen overflow-y-hidden">
       <div className="h-full w-full">
         <img src="imagem-princ.jpg" alt="" className="h-full w-full absolute object-cover" />
       </div>

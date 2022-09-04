@@ -2,7 +2,7 @@ import { Titulo } from "../Titulo";
 
 export function Sobre() {
   return (
-    <section>
+    <section className="mb-6 md:m-0">
       <a id="sobre"></a>
       <Titulo titulo="Sobre" />
       <div className="block md:flex md:justify-evenly md:text-center">
