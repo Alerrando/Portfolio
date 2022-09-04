@@ -34,10 +34,10 @@ export function Sobre() {
 
         <div className="alinhamento mt-8">
           <div className="w-full md:w-16 md:grid gap-8 alinhamento place-content-center">
-            <img src="/public/html.svg" alt="imagem da linguagem html" className="w-12 h-12 md:w-20 md:h-20" />
-            <img src="/public/css3.svg" alt="imagem da linguagem css" className="w-12 h-12 md:w-20 md:h-20" />
-            <img src="/public/javascript.svg" alt="imagem da linguagem javascript" className="w-12 h-12 md:w-20 md:h-20" />
-            <img src="/public/react.svg" alt="imagem da linguagem react" className="w-12 h-12 md:w-20 md:h-20" />
+            <img src="html.svg" alt="imagem da linguagem html" className="w-12 h-12 md:w-20 md:h-20" />
+            <img src="css3.svg" alt="imagem da linguagem css" className="w-12 h-12 md:w-20 md:h-20" />
+            <img src="javascript.svg" alt="imagem da linguagem javascript" className="w-12 h-12 md:w-20 md:h-20" />
+            <img src="react.svg" alt="imagem da linguagem react" className="w-12 h-12 md:w-20 md:h-20" />
           </div>
         </div>
       </div>
