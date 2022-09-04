@@ -36,7 +36,7 @@ export function Header() {
                   <a href="#sobre">Sobre</a>
                 </li>
                 <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
-                  <a href="#">Contato</a>
+                  <a href="#contato">Contato</a>
                 </li>
               </ul>
             </main>
