@@ -20,7 +20,7 @@ export function Contato() {
             </h2>
             <form className="block md:grid md:w-full w-52 py-6">
               <label
-                className="font-times text-xl font-bold text-white"
+                className="font-times text-lg font-semibold text-white"
                 htmlFor="name"
               >
                 Digite seu nome
@@ -33,7 +33,7 @@ export function Contato() {
               />
 
               <label
-                className="font-times text-xl font-bold text-white"
+                className="font-times text-lg font-semibold text-white"
                 htmlFor="email"
               >
                 Digite seu email
@@ -46,7 +46,7 @@ export function Contato() {
               />
 
               <label
-                className="font-times text-xl font-bold text-white"
+                className="font-times text-lg font-semibold text-white"
                 htmlFor="mensagem"
               >
                 Digite sua mensagem
