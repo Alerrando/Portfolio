@@ -5,7 +5,7 @@ const projetos = [
   {
     titulo: "Loja - TechSoft",
     subTitulo: "Feito com Html e Css",
-    img: "/public/projeto1.png",
+    img: "projeto1.png",
     alt: "Projeto Loja",
     githubSite: "https://github.com/Alerrando/Loja",
     desktopSite: "https://alerrando.github.io/Loja/Loja.html",
@@ -14,7 +14,7 @@ const projetos = [
   {
     titulo: "Rélogio Digital",
     subTitulo: "Feito com Html, Css e Javascript",
-    img: "/public/projeto2.png",
+    img: "projeto2.png",
     alt: "Projeto Rélogio Digital",
     githubSite: "https://github.com/Alerrando/Relogio-Digital",
     desktopSite:
@@ -24,7 +24,7 @@ const projetos = [
   {
     titulo: "Trocador de Cor",
     subTitulo: "Feito com Html, Css e Javascript",
-    img: "/public/projeto3.png",
+    img: "projeto3.png",
     alt: "Projeto Trocador de Cor",
     githubSite: "https://github.com/Alerrando/Trocador-de-Cores",
     desktopSite: "https://alerrando.github.io/Trocador-de-Cores/",
@@ -33,7 +33,7 @@ const projetos = [
   {
     titulo: "Clipboard landing page master",
     subTitulo: "Projeto do site Front End Mentor feito com Html e Css",
-    img: "/public/projeto4.png",
+    img: "projeto4.png",
     alt: "Projeto Loja",
     githubSite: "https://github.com/Alerrando/clipboard-landing-page-master",
     desktopSite:
@@ -43,7 +43,7 @@ const projetos = [
   {
     titulo: "Previsão do Tempo",
     subTitulo: "Projeto consumindo API com Html, Css e Javascript",
-    img: "/public/projeto5.png",
+    img: "projeto5.png",
     alt: "Projeto de previsão do tempo",
     githubSite: "https://github.com/Alerrando/Previsao-do-Tempo",
     desktopSite: "https://alerrando.github.io/Previsao-do-Tempo/",
@@ -52,7 +52,7 @@ const projetos = [
   {
     titulo: "Google",
     subTitulo: "Projeto de cópia da Google",
-    img: "/public/projeto6.png",
+    img: "projeto6.png",
     alt: "Projeto Google",
     githubSite: "https://github.com/Alerrando/Google",
     desktopSite: "https://alerrando.github.io/Google/index.html",
@@ -61,7 +61,7 @@ const projetos = [
   {
     titulo: "Crud Hotel",
     subTitulo: "Projeto de um Crud usando ReactJS",
-    img: "/public/projeto7.png",
+    img: "projeto7.png",
     alt: "Projeto Crud Hotel",
     githubSite: "https://github.com/Alerrando/Crud-Hotel",
     desktopSite: "https://crud-hotel.vercel.app/",
@@ -70,7 +70,7 @@ const projetos = [
   {
     titulo: "Loja - TechSoft",
     subTitulo: "Projeto da Loja TechSoft refeita com ReactJS",
-    img: "/public/projeto8.png",
+    img: "projeto8.png",
     alt: "Projeto Loja com ReactJS",
     githubSite: "https://github.com/Alerrando/Loja-ReactJs",
     desktopSite: "https://loja-react-js.vercel.app/",
@@ -79,7 +79,7 @@ const projetos = [
   {
     titulo: "Instagram",
     subTitulo: "Projeto do Instagram feito com ReactJS",
-    img: "/public/projeto9.png",
+    img: "projeto9.png",
     alt: "Projetodo Instagram feit com ReactJS",
     githubSite: "https://github.com/Alerrando/Instagram-Clone",
     desktopSite: "https://instagram-clone-alerrando.vercel.app/",
