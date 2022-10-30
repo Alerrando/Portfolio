@@ -72,6 +72,7 @@ npx tailwindcss init
 <h3>Instalação Post CSS</h3>
 
 ```
+npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
