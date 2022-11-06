@@ -94,6 +94,16 @@ const projetos = [
     desktopSite: "https://pokedex-alerrando.vercel.app/",
     filterProjeto: "React",
   },
+
+  {
+    titulo: "Previsão do Tempo",
+    subTitulo: "Projeto Previsão do Tempo",
+    img: "Projetos/projeto11.png",
+    alt: "Projetodo Previsão do Tempo",
+    githubSite: "https://github.com/Alerrando/Previsao-do-Tempo-ReactJS",
+    desktopSite: "https://previsao-do-tempo-reactjs-alerrando.vercel.app/",
+    filterProjeto: "React",
+  },
 ];
 
 export function Projetos() {
