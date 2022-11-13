@@ -4,8 +4,6 @@
     Portfólio
 </h1>
 
-<p align="center">Meu Portfólio feito com <a href="https://www.typescriptlang.org/">Typescript</a> e <a href="https://tailwindcss.com/docs/installation">Tailwind CSS</a></p>
-
 </br>
 
 ## ⌨️ Criação e Execução
@@ -57,9 +55,9 @@ pnpm create vite my-vue-app --template vue
 
 ## 💡 Tecnologias Usasdas
 <ul>
-<li>TypeScript
-<li>Tailwind CSS
-<li>Post CSS
+<li><a href="https://www.typescriptlang.org/">Typescript</a>
+<li><a href="https://tailwindcss.com/docs/installation">Tailwind CSS</a>
+<li><a href="https://postcss.org/">PostCSS</a>
 </ul>
 </br>
 <h3>Instalação Tailwind CSS</h3>
