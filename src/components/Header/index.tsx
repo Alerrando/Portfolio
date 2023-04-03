@@ -5,7 +5,7 @@ import {
   X,
   YoutubeLogo,
 } from "phosphor-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export function Header() {
   const [menu, setMenu] = useState("hidden");
