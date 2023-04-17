@@ -62,7 +62,7 @@ export function Sobre() {
       <a id="sobre"></a>
       <Titulo titulo="Sobre Mim" />
       <Tab.Group>
-        <Tab.List className="w-full absolute flex flex-row justify-center gap-[1.5rem] bottom-[5%]">
+        <Tab.List className="w-full absolute flex flex-row justify-center gap-[1.5rem] bottom-0 md:bottom-[5%]">
           <Tab as={Fragment}>
             {({ selected }) => (
               <button
@@ -91,7 +91,7 @@ export function Sobre() {
           </Tab>
         </Tab.List>
         <Tab.Panels>
-          <Tab.Panel className="block md:grid md:text-center md:px-5 tab-panel">
+          <Tab.Panel className="block pb-10 md:grid md:text-center md:px-5 md:pb-0 tab-panel">
             <div className="w-full h-full md:w-[46rem] md:h-[36rem]">
               <img
                 src="frontend-image.png"
@@ -125,8 +125,8 @@ export function Sobre() {
             </div>
           </Tab.Panel>
           <Tab.Panel className="w-full h-full md:h-[36rem]">
-            <div className="max-w-[1200px] mx-auto px-4 pt-6">
-              <div className="grid grid-cols-projetos gap-6">
+            <div className="max-w-[1200px] mx-auto px-4 pt-8 pb-10 md:pb-0">
+              <div className="grid grid-cols-3 md:grid-cols-projetos gap-6">
                 {technologias.map((item: TechnologiasType, key: Key) => (
                   <div
                     key={key}
