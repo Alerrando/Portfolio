@@ -1,14 +1,68 @@
 import { Tab } from "@headlessui/react";
 import { Titulo } from "../Titulo";
-import React, { Fragment } from "react";
+import { Fragment, Key } from "react";
+import { AiFillHtml5 } from "react-icons/ai";
+import { IconType } from "react-icons/lib";
+import { BsGit } from 'react-icons/bs'
+import { FaReact } from "react-icons/fa";
+import { DiCss3, DiJavascript1, DiSass } from "react-icons/di";
+import { SiMui, SiTailwindcss } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+
+type TechnologiasType = {
+  nome: string;
+  icon: IconType;
+};
 
 export function Sobre() {
+  const technologias: TechnologiasType[] = [
+    {
+      nome: "Html",
+      icon: AiFillHtml5,
+    },
+    {
+      nome: "Css",
+      icon: DiCss3,
+    },
+    {
+      nome: "Javascript",
+      icon: DiJavascript1,
+    },
+    {
+      nome: "React-Js",
+      icon: FaReact,
+    },
+    {
+      nome: "Tailwind-Css",
+      icon: SiTailwindcss,
+    },
+    {
+      nome: "Next-Js",
+      icon: TbBrandNextjs,
+    },
+
+    {
+      nome: "Scss",
+      icon: DiSass,
+    },
+
+    {
+      nome: "Mui-Core",
+      icon: SiMui,
+    },
+
+    {
+      nome: "Git",
+      icon: BsGit,
+    }
+  ];
+
   return (
     <section className="mb-6 md:m-0 relative">
       <a id="sobre"></a>
       <Titulo titulo="Sobre Mim" />
       <Tab.Group>
-        <Tab.List className="absolute flex flex-row gap-[1.5rem] bottom-[5%] right-[50%]">
+        <Tab.List className="w-full absolute flex flex-row justify-center gap-[1.5rem] bottom-[5%]">
           <Tab as={Fragment}>
             {({ selected }) => (
               <button
@@ -37,7 +91,7 @@ export function Sobre() {
           </Tab>
         </Tab.List>
         <Tab.Panels>
-          <Tab.Panel className="block md:flex md:justify-evenly md:text-center">
+          <Tab.Panel className="block md:grid md:text-center md:px-5 tab-panel">
             <div className="w-full h-full md:w-[46rem] md:h-[36rem]">
               <img
                 src="frontend-image.png"
@@ -46,25 +100,46 @@ export function Sobre() {
               />
             </div>
 
-            <div className="alinhamento justify-center md:block md:my-auto">
-              <div className="text-center md:text-left w-[18.75rem]">
+            <div className="alinhamento justify-center md:block md:my-auto md:px-10">
+              <div className="flex flex-col gap-2 text-center md:text-left w-[18.75rem]">
                 <h3 className="text-2xl font-bold font-times">Quem sou eu</h3>
-                <span className="font-playfair font-bold text-base">
-                  Meu nome é Alerrando Breno, sou um desenvoldedor front-end jr,
-                  atualmente estou cursando Análise e Desenvolvimento de
-                  Sistemas na Universidade do Oeste Paulista(Unoeste).
-                </span>
+                <p className="font-playfair font-bold text-base text-[#27BBA5]">
+                  Olá, eu sou Alerrando! 
+                </p>
 
-                <h3 className="mt-16 text-2xl font-bold font-times">
-                  O que estou estudando
-                </h3>
-                <span className="font-playfair font-bold text-base">
-                  Atualmente estou estudando ReactJS, TailwindCSS.
-                </span>
+                <p className="font-playfair font-bold text-base text-[#27BBA5]">
+                  Adoro desenvolver aplicações web e
+                  estou sempre procurando aprender mais sobre o mundo da
+                  programação porque é literalmente infinito.
+                </p>
+
+                <p className="font-playfair font-bold text-base text-[#27BBA5]">
+                  Estou sempre
+                  procurando melhorar meu trabalho o máximo possível e adoro
+                  pedir dicas a outros desenvolvedores sobre como fazer isso.
+                  Acredito que a troca de conhecimento entre as pessoas é
+                  fundamental para o desenvolvimento pessoal e interpessoal de
+                  cada um.
+                </p>
               </div>
             </div>
           </Tab.Panel>
-          <Tab.Panel className="w-full h-full md:w-[46rem] md:h-[36rem]"></Tab.Panel>
+          <Tab.Panel className="w-full h-full md:h-[36rem]">
+            <div className="max-w-[1200px] mx-auto px-4 pt-6">
+              <div className="grid grid-cols-projetos gap-6">
+                {technologias.map((item: TechnologiasType, key: Key) => (
+                  <div
+                    key={key}
+                    className={`w-[65%] h-14 max-h-16 md:h-28 md:max-h-[120px] relative flex items-center justify-center mx-auto hover:border hover:border-black hover:rounded-lg transition-all ${item.nome}`}
+                  >
+                    <div className="h-3/4">
+                      <item.icon className={`w-full h-full`} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </section>

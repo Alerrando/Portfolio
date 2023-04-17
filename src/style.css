@@ -33,3 +33,37 @@
 .alinhamento {
   @apply flex items-center;
 }
+
+@media screen and (min-width: 1024px){
+  .tab-panel{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Html:hover{
+    color: #F26525;
+  }
+
+  .Css:hover{
+    color: #2C49DB;
+  }
+
+  .Javascript:hover{
+    color: #D3BA25;
+  }
+
+  .React-Js:hover{
+    color: #48C2E8;
+  }
+
+  .Tailwind-Css:hover{
+    color: #38BDF8;
+  }
+
+  .Scss:hover{
+    color: #FDB9D7;
+  }
+
+  .Mui-Core:hover{
+    color: #007FFF;
+  }
+}
