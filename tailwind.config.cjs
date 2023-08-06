@@ -18,6 +18,10 @@ module.exports = {
       gridTemplateColumns: {
         "projetos": "repeat(auto-fit, minmax(300px, 1fr));",
       },
+
+      textColor: {
+        menuMobile: "#676D75",
+      }
     },
   },
   plugins: [],

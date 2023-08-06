@@ -6,69 +6,39 @@ import {
   YoutubeLogo,
 } from "phosphor-react";
 import React, { useState } from "react";
+import { MenuMobile } from "./MenuMobile";
 
 export function Header() {
-  const [menu, setMenu] = useState("hidden");
-
-  function handleMenu(){
-    menu == "block" ? setMenu("hidden") : setMenu("block");
-  }
 
   return (
     <header className="w-full fixed z-20">
-      <div className="w-full alinhamento justify-between py-2 px-4 md:w-[88%]">
+      <div className="w-[88%] hidden md:flex md:items-center md:justify-between py-2 px-4">
         <div className="w-full"></div>
 
-        <nav className={`fixed h-screen w-48 top-0 right-0 md:relative md:h-full md:flex md:w-auto transition-all z-10 ${menu}`}>
+        <nav className="relative h-16 w-auto top-0 right-0 flex transition-all z-10">
           <div className="w-full h-full grid grid-rows-sidebar bg-[#2e3238] md:bg-transparent md:flex">
-            <header className="alinhamento justify-end mr-4 cursor-pointer md:hidden">
-              <X size={32} className="text-white" weight="bold" onClick={() => handleMenu()} />
-            </header>
 
-            <main className="h-52 flex mx-auto mt-8 mb-20 md:items-center md:m-0 md:h-16">
-              <ul className="block md:flex md:flex-row md:items-center md:justify-center md:gap-9 text-white">
-                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
-                  <a href="#projetos">Home</a>
-                </li>
-                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
-                  <a href="#projetos">Projetos</a>
-                </li>
-                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
-                  <a href="#sobre">Conhecimentos</a>
-                </li>
-                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
-                  <a href="#contato">Contato</a>
-                </li>
-              </ul>
-            </main>
-
-            <footer className="w-full md:hidden">
-              <div className="alinhamento justify-around">
-                <div className="w-10 h-10 rounded-full">
-                  <FacebookLogo
-                    className="h-[80%] w-[80%] text-white cursor-pointer transition-colors hover:text-[#1877F2]"
-                    weight="bold"
-                  />
-                </div>
-
-                <div className="w-10 h-10 rounded-full">
-                  <YoutubeLogo
-                    className="h-[80%] w-[80%] text-white cursor-pointer transition-colors hover:text-[#FF0000]"
-                    weight="bold"
-                  />
-                </div>
-
-                <div className="w-10 h-10 rounded-full">
-                  <TwitterLogo
-                    className="h-[80%] w-[80%] text-white cursor-pointer transition-colors hover:text-[#1A8CD8]"
-                    weight="bold"
-                  />
-                </div>
-              </div>
-            </footer>
+            <ul className="flex flex-row items-center justify-center gap-9 text-white">
+              <li className="hover:text-red-500 transition-colors text-lg">
+                <a href="#projetos">Home</a>
+              </li>
+              <li className="hover:text-red-500 transition-colors text-lg">
+                <a href="#projetos">Projetos</a>
+              </li>
+              <li className="hover:text-red-500 transition-colors text-lg">
+                <a href="#sobre">Conhecimentos</a>
+              </li>
+              <li className="hover:text-red-500 transition-colors text-lg">
+                <a href="#contato">Contato</a>
+              </li>
+            </ul>
           </div>
         </nav>
         <List className="block cursor-pointer text-white md:hidden" size={32} weight="bold" onClick={() => handleMenu()} />
+      </div>
+
+      <div className="w-full h-auto flex items-center justify-center py-3 bg-[#1D1F24] fixed bottom-0 md:hidden">
+        <MenuMobile />
       </div>
     </header>
   );
