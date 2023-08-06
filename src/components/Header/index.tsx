@@ -15,11 +15,9 @@ export function Header() {
   }
 
   return (
-    <header className="w-full bg-princ fixed z-20">
-      <div className="w-full alinhamento justify-between py-2 px-4 md:px-16">
-        <div className="w-[45px] h-[45px]">
-          <img src='favicon.ico' alt="icone do site" className="w-full h-full cursor-pointer" />
-        </div>
+    <header className="w-full fixed z-20">
+      <div className="w-full alinhamento justify-between py-2 px-4 md:w-[88%]">
+        <div className="w-full"></div>
 
         <nav className={`fixed h-screen w-48 top-0 right-0 md:relative md:h-full md:flex md:w-auto transition-all z-10 ${menu}`}>
           <div className="w-full h-full grid grid-rows-sidebar bg-[#2e3238] md:bg-transparent md:flex">
@@ -27,15 +25,18 @@ export function Header() {
               <X size={32} className="text-white" weight="bold" onClick={() => handleMenu()} />
             </header>
 
-            <main className="h-52 flex mx-auto mt-8 mb-20 md:items-center md:m-0 md:h-full">
-              <ul className=" block md:flex md:gap-6 text-white">
-                <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
+            <main className="h-52 flex mx-auto mt-8 mb-20 md:items-center md:m-0 md:h-16">
+              <ul className="block md:flex md:flex-row md:items-center md:justify-center md:gap-9 text-white">
+                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
+                  <a href="#projetos">Home</a>
+                </li>
+                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
                   <a href="#projetos">Projetos</a>
                 </li>
-                <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
-                  <a href="#sobre">Sobre</a>
+                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
+                  <a href="#sobre">Conhecimentos</a>
                 </li>
-                <li className="mb-6 hover:text-red-500 transition-colors text-xl md:mb-0">
+                <li className="mb-6 hover:text-red-500 transition-colors text-lg md:mb-0">
                   <a href="#contato">Contato</a>
                 </li>
               </ul>

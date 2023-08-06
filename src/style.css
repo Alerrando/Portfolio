@@ -21,11 +21,6 @@
   animation: moveX 2s;
 }
 
-.img-fundo{
-  background: url('./components/Main/image/imagem-princ.jpg');
-  background-size: cover;
-}
-
 .opacidade{
   animation: opac 2s;
 }

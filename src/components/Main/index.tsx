@@ -1,10 +1,8 @@
-import foto from "./image/imagem-princ.jpg";
-
 export function Main() {
   return (
     <main className="w-full alinhamento md:grid h-screen overflow-y-hidden">
       <div className="h-full w-full">
-        <img src="imagem-princ.jpg" alt="" className="h-full w-full absolute object-cover" />
+        <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover" />
       </div>
       <div className="mx-12 md:mx-20 w-[420px] text-center chegando z-10">
         <p className="text-[#f8f8ff] text-xl md:text-base font-bold font-playfair">
