@@ -1,31 +1,34 @@
 export function Main() {
   return (
-    <main className="w-full alinhamento md:grid h-screen overflow-y-hidden">
-      <div className="h-full w-full">
-        <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover" />
-      </div>
-      <div className="mx-12 md:mx-20 w-[420px] text-center chegando z-10">
-        <p className="text-[#f8f8ff] text-xl md:text-base font-bold font-playfair">
-          Olá, meu nome é
-        </p>
-        <h1 className="text-[#20b2aa] text-3xl md:text-4xl my-1 font-roboto font-bold">
-          Alerrando Breno
-        </h1>
-        <p className="text-[#f8f8ff] text-xl md:text-base font-bold font-playfair">
-          e sou
-        </p>
-        <h2 className="text-[#ffffe0] text-2xl md:text-2xl mb-3 font-roboto font-bold">
-          Desenvolvedor Front End
-        </h2>
+    <main className="w-full h-screen">
+      <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover -z-10" />
+      
+      <div className="w-full h-full flex flex-col-reverse items-center justify-between md:grid md:grid-cols-2 px-5 md:px-20 z-50">
+        <div className="w-full h-full flex flex-col items-start justify-center gap-4">
+          <div className="w-auto bg-white rounded-lg p-2 md:py-3 md:px-4">
+            <span className="text-[#CD5FF8] text-base md:text-xl font-roboto">Desenvolvedor Front End</span>
+          </div>
 
-        <div className="md:flex md:justify-center block gap-3">
-          <a href="https://www.linkedin.com/in/alerrando-breno-656aa8188" className="no-underline font-roboto text-base text-white">
-            <button className="cursor-pointer border-none rounded-[20px] md:opacity-80 md:px-16 py-2 mt-4 px-32 shadow-[2px 3px 3px black] bg-[#26bba5] opacidade md:animate-none md:hover:opacity-100">Linkedin</button>
-          </a>
-          <a href="https://github.com/Alerrando" className="no-underline font-roboto text-base text-white">
-            <button className="cursor-pointer border-none rounded-[20px] md:opacity-80 md:px-16 py-2 mt-4 px-[136px] shadow-[2px 3px 3px black] bg-[#0f3443] opacidade md:animate-none md:hover:opacity-100">Github</button>
-          </a>
+          <h1 className="text-[28px] md:text-4xl font-bold font-roboto uppercase">Alerrando Breno</h1>
+
+          <p className="text-[#AFAFAF] text-base md:text-lg leading-snug">
+            Estou sempre procurando melhorar meu trabalho o máximo possível e adoro pedir dicas a outros 
+            desenvolvedores sobre como fazer isso. Acredito que a troca de conhecimento entre as pessoas é 
+            fundamental para o desenvolvimento pessoal e interpessoal de cada um.
+          </p>
+
+          <div className="w-1/2 h-auto flex items-center justify-between">
+            <img src="react.svg" alt="Icone da Linguagem React" className="w-10 h-9 md:w-16 md:h-14" />
+            
+            <img src="typescript.svg" alt="Icone da Linguagem Typescript" className="w-9 h-9 md:w-16 md:h-14" />
+
+            <img src="spring-boot.svg" alt="Icone da Linguagem Spring Boot" className="w-9 h-9 md:w-16 md:h-14" />
+          </div>
         </div>
+
+        <aside className="w-full h-full flex flex-col items-end justify-center">
+          <img src="aside-main.png" alt="Imagem Aside Main" className="aside-main" />
+        </aside>
       </div>
     </main>
   );

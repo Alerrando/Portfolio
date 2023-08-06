@@ -11,7 +11,7 @@ import { MenuMobile } from "./MenuMobile";
 export function Header() {
 
   return (
-    <header className="w-full fixed z-20">
+    <header className="w-full fixed md:absolute z-20">
       <div className="w-[88%] hidden md:flex md:items-center md:justify-between py-2 px-4">
         <div className="w-full"></div>
 
@@ -34,7 +34,7 @@ export function Header() {
             </ul>
           </div>
         </nav>
-        <List className="block cursor-pointer text-white md:hidden" size={32} weight="bold" onClick={() => handleMenu()} />
+        <List className="block cursor-pointer text-white md:hidden" size={32} weight="bold" />
       </div>
 
       <div className="w-full h-auto flex items-center justify-center py-3 bg-[#1D1F24] fixed bottom-0 md:hidden">
