@@ -1,5 +1,6 @@
 import { Key, useState } from "react";
 import { Title } from "../Title";
+import { GithubLogo, Monitor } from "phosphor-react";
 
 type ProjectsTypes = {
   title: string,
@@ -92,13 +93,13 @@ export function Projetos() {
 
   return (
     <section>
-      <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover -z-10" />
+      <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover -z-10 scale-y-[-1]" />
       <a id="projetos"></a>
       <div className="max-w-[1200px] flex flex-col gap-10 mx-auto px-4 py-6">
         <Title title={"Projetos"} />
 
         <div className="grid grid-cols-projetos gap-6">
-          {projects.map((projeto: ProjectsTypes, index: Key) => (
+          {projects.map((projeto: ProjectsTypes, index: number) => (
             <>
               <div className="max-h-[200px] relative text-center group border border-zinc-400 rounded-xl" key={index}>
                 <div className="w-full h-full">
@@ -112,16 +113,10 @@ export function Projetos() {
                 <div className="absolute w-full border-none outline-none ease-in-out bottom-0 py-4 md:hidden md:group-hover:block transition-all">
                   <div className="alinhamento justify-center pb-8 gap-16 text-white">
                     <a href={projeto.githubSite} target="_blank">
-                      <img
-                        src={"github-svgrepo-com.svg"}
-                        alt="icon do github"
-                      />
+                      <GithubLogo size={22} className="text-black" />
                     </a>
                     <a href={projeto.desktopSite} target="_blank">
-                      <img
-                        src={"desktop-svgrepo-com.svg"}
-                        alt="icon de desktop"
-                      />
+                      <Monitor size={22} className="text-black" />
                     </a>
                   </div>
                   <h2 className="font-roboto text-xl font-bold text-[#20b2aa]">

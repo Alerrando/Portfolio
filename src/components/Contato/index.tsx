@@ -5,12 +5,12 @@ import {
   TwitterLogo,
   YoutubeLogo,
 } from "phosphor-react";
-import { Titulo } from "../Title";
+import { Title } from "../Title";
 
 export function Contato() {
   return (
     <footer>
-      <Titulo titulo="Contato" />
+      <Title title="Contato" />
       <a id="contato"></a>
       <div className="w-full h-auto bg-zinc-900 px-8 py-10 md:px-16">
         <div className="block md:grid grid-cols-2">
