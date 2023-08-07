@@ -1,13 +1,13 @@
 import { Tab } from "@headlessui/react";
-import { Titulo } from "../Titulo";
 import { Fragment, Key } from "react";
 import { AiFillHtml5 } from "react-icons/ai";
-import { IconType } from "react-icons/lib";
-import { BsGit } from 'react-icons/bs'
-import { FaReact } from "react-icons/fa";
+import { BsGit } from 'react-icons/bs';
 import { DiCss3, DiJavascript1, DiSass } from "react-icons/di";
+import { FaReact } from "react-icons/fa";
+import { IconType } from "react-icons/lib";
 import { SiMui, SiTailwindcss } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
+import { Titulo } from "../Title";
 
 type TechnologiasType = {
   nome: string;
@@ -66,11 +66,10 @@ export function Sobre() {
           <Tab as={Fragment}>
             {({ selected }) => (
               <button
-                className={`bg-transparent border-0 text-dark cursor-pointer block text-sm relative outline-none ${
-                  selected
+                className={`bg-transparent border-0 text-dark cursor-pointer block text-sm relative outline-none ${selected
                     ? "after:bg-red-600 after:rounded-[25px] after:b-[-18px] after:block after:h-[.5rem] after:left-0 after:mr-auto after:ml-auto after:right-0 after:absolute after:w-[29px] after:z-100"
                     : ""
-                }`}
+                  }`}
               >
                 INFOS
               </button>
@@ -79,11 +78,10 @@ export function Sobre() {
           <Tab as={Fragment}>
             {({ selected }) => (
               <button
-                className={`bg-transparent border-0 text-dark cursor-pointer block text-sm relative outline-none ${
-                  selected
+                className={`bg-transparent border-0 text-dark cursor-pointer block text-sm relative outline-none ${selected
                     ? "after:bg-red-600 after:rounded-[25px] after:b-[-18px] after:block after:h-[.5rem] after:left-0 after:mx-auto after:right-0 after:absolute after:w-[29px] after:z-100"
                     : ""
-                }`}
+                  }`}
               >
                 TECHNOLOGIAS
               </button>
@@ -104,7 +102,7 @@ export function Sobre() {
               <div className="flex flex-col gap-2 text-center md:text-left w-[18.75rem]">
                 <h3 className="text-2xl font-bold font-times">Quem sou eu</h3>
                 <p className="font-playfair font-bold text-base text-[#27BBA5]">
-                  Olá, eu sou Alerrando! 
+                  Olá, eu sou Alerrando!
                 </p>
 
                 <p className="font-playfair font-bold text-base text-[#27BBA5]">

@@ -5,7 +5,7 @@ import {
   TwitterLogo,
   YoutubeLogo,
 } from "phosphor-react";
-import { Titulo } from "../Titulo";
+import { Titulo } from "../Title";
 
 export function Contato() {
   return (

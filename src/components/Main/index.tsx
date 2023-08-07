@@ -9,7 +9,9 @@ export function Main() {
             <span className="text-[#CD5FF8] text-base md:text-xl font-roboto">Desenvolvedor Front End</span>
           </div>
 
-          <h1 className="text-[28px] md:text-4xl font-bold font-roboto uppercase">Alerrando Breno</h1>
+          <h1 className="text-white text-[28px] md:text-4xl font-bold font-roboto uppercase">
+            Alerrando Breno
+          </h1>
 
           <p className="text-[#AFAFAF] text-base md:text-lg leading-snug">
             Estou sempre procurando melhorar meu trabalho o máximo possível e adoro pedir dicas a outros 
