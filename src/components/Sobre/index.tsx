@@ -3,7 +3,7 @@ import { Fragment, Key } from "react";
 import { AiFillHtml5 } from "react-icons/ai";
 import { BsGit } from 'react-icons/bs';
 import { DiCss3, DiJavascript1, DiSass } from "react-icons/di";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaSass } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 import { SiMui, SiTailwindcss } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
@@ -27,6 +27,10 @@ export function Sobre() {
     {
       nome: "Javascript",
       icon: DiJavascript1,
+    },
+    {
+      nome: "Sass",
+      icon: FaSass
     },
     {
       nome: "React-Js",
