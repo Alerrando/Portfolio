@@ -14,7 +14,7 @@ type TechnologiasType = {
   icon: IconType;
 };
 
-export function Sobre() {
+export function Conhecimentos() {
   const technologias: TechnologiasType[] = [
     {
       nome: "Html",
@@ -62,9 +62,8 @@ export function Sobre() {
   ];
 
   return (
-    <section className="mb-6 md:m-0 relative">
+    <section className="mb-6 md:m-0 relative bg-zinc-900">
       <a id="sobre"></a>
-      <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover -z-10" />
 
       <div className="max-w-[1200px] h-auto flex flex-col gap-8 mx-auto py-6">
         <Title title="Conhecimentos" />
@@ -73,7 +72,7 @@ export function Sobre() {
             {technologias.map((item: TechnologiasType, key: Key) => (
               <div
                 key={key}
-                className={`w-[65%] h-14 max-h-16 md:h-28 md:max-h-[120px] relative flex items-center justify-center mx-auto hover:border hover:border-black hover:rounded-lg transition-all ${item.nome}`}
+                className={`w-[65%] h-14 max-h-16 md:h-28 md:max-h-[120px] relative flex items-center justify-center mx-auto border-2 border-zinc-800 hover:border-[#CD5FF8] rounded-lg transition-all text-white`}
               >
                 <div className="h-3/4">
                   <item.icon className={`w-full h-full`} />

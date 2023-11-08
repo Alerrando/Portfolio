@@ -8,11 +8,13 @@ import {
 import { Title } from "../Title";
 
 export function Contato() {
+  
+
   return (
-    <footer>
+    <footer className="bg-zinc-900 px-8 py-10 md:px-16 flex flex-col gap-6">
       <Title title="Contato" />
       <a id="contato"></a>
-      <div className="w-full h-auto bg-zinc-900 px-8 py-10 md:px-16">
+      <div className="w-full h-auto">
         <div className="block md:grid grid-cols-2">
           <div className="w-full h-full border-b-[1px] md:border-r-[1px] border-zinc-600">
             <h2 className="font-roboto text-2xl font-bold text-white">
@@ -29,7 +31,7 @@ export function Contato() {
                 type="text"
                 placeholder="Digite seu nome..."
                 name="name"
-                className="mb-3 md:w-2/5 px-1 outline-none"
+                className="mb-3 md:w-2/5 py-1 px-2  outline-none rounded-md"
               />
 
               <label
@@ -42,7 +44,7 @@ export function Contato() {
                 type="email"
                 placeholder="Digite seu email..."
                 name="email"
-                className="mb-3 md:w-2/5 px-1 outline-none"
+                className="mb-3 md:w-2/5 py-1 px-2  outline-none rounded-md"
               />
 
               <label
@@ -54,7 +56,7 @@ export function Contato() {
               <textarea
                 cols={30}
                 rows={8}
-                className="md:w-3/5 px-1 outline-none resize-none"
+                className="md:w-3/5 px-2 py-1 outline-none resize-none rounded-md"
                 name="mensagen"
               ></textarea>
 

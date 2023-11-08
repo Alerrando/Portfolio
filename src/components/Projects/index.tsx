@@ -92,8 +92,7 @@ const projects: ProjectsTypes[] = [
 export function Projetos() {
 
   return (
-    <section>
-      <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover -z-10 scale-y-[-1]" />
+    <section className="bg-zinc-900">
       <a id="projetos"></a>
       <div className="max-w-[1200px] flex flex-col gap-10 mx-auto px-4 py-6">
         <Title title={"Projetos"} />

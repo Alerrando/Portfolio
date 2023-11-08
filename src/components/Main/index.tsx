@@ -1,12 +1,10 @@
 export function Main() {
   return (
-    <main className="w-full h-screen">
-      <img src="main-img.jpg" alt="" className="h-full w-full absolute object-cover -z-10" />
-      
+    <main className="w-full h-screen bg-zinc-900">      
       <div className="w-full h-full flex flex-col-reverse items-center justify-between md:grid md:grid-cols-2 px-5 md:px-20 z-50">
         <div className="w-full h-full flex flex-col items-start justify-center gap-4">
           <div className="w-auto bg-white rounded-lg p-2 md:py-3 md:px-4">
-            <span className="text-[#CD5FF8] text-base md:text-xl font-roboto">Desenvolvedor Front End</span>
+            <span className="text-[#CD5FF8] text-base md:text-xl font-roboto font-bold">Desenvolvedor Front End</span>
           </div>
 
           <h1 className="text-white text-[28px] md:text-4xl font-bold font-roboto uppercase">
