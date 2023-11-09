@@ -80,9 +80,8 @@ export function Knowledge() {
         <div className="w-full h-full flex flex-row items-center justify-center">
           <div className="w-full grid grid-cols-3 md:grid-cols-projetos gap-6">
             {technologias.map((item: TechnologiasType, key: Key) => (
-              <div className="w-full flex items-center justify-center">
+              <div className="w-full flex items-center justify-center" key={key}>
                 <div
-                  key={key}
                   className={`w-[65%] h-14 max-h-16 md:h-28 md:max-h-[120px] relative flex items-center justify-center mr-auto border-2 border-zinc-800 hover:border-[#CD5FF8] rounded-lg transition-all text-white`}
                 >
                   <div className="h-3/4">

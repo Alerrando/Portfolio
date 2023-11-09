@@ -113,7 +113,7 @@ export function Contact() {
         </div>
 
         <div className="grid gap-6 mt-4 md:flex md:items-center md:gap-8 text-xl text-white">
-          <span>Alerrando © 2022</span>
+          <span>Alerrando © 2023</span>
           <span>Obrigado por acessar</span>
         </div>
       </div>
