@@ -92,9 +92,9 @@ const projects: ProjectsTypes[] = [
 export function Projetos() {
 
   return (
-    <section className="bg-zinc-900">
+    <section className="bg-zinc-900 py-4">
       <a id="projetos"></a>
-      <div className="max-w-[1200px] flex flex-col gap-10 mx-auto px-4 py-6">
+      <div className="max-w-[1200px] flex flex-col gap-10 mx-auto py-6">
         <Title title={"Projetos"} />
 
         <div className="grid grid-cols-projetos gap-6">

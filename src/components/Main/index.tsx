@@ -1,6 +1,6 @@
 export function Main() {
   return (
-    <main className="w-full h-screen bg-zinc-900">      
+    <main className="w-full h-auto md:h-screen bg-zinc-900">      
       <div className="w-full h-full flex flex-col-reverse items-center justify-between md:grid md:grid-cols-2 px-5 md:px-20 z-50">
         <div className="w-full h-full flex flex-col items-start justify-center gap-4">
           <div className="w-auto bg-white rounded-lg p-2 md:py-3 md:px-4">

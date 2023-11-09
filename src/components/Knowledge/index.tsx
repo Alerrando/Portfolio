@@ -3,9 +3,9 @@ import { Fragment, Key } from "react";
 import { AiFillHtml5 } from "react-icons/ai";
 import { BsGit } from 'react-icons/bs';
 import { DiCss3, DiJavascript1, DiSass } from "react-icons/di";
-import { FaReact, FaSass } from "react-icons/fa";
+import { FaJava, FaReact, FaSass } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
-import { SiMui, SiTailwindcss } from "react-icons/si";
+import { SiMui, SiSpring, SiTailwindcss } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { Title } from "../Title";
 
@@ -14,7 +14,7 @@ type TechnologiasType = {
   icon: IconType;
 };
 
-export function Conhecimentos() {
+export function Knowledge() {
   const technologias: TechnologiasType[] = [
     {
       nome: "Html",
@@ -56,13 +56,23 @@ export function Conhecimentos() {
     },
 
     {
+      nome: "Java",
+      icon: FaJava
+    },
+
+    {
+      nome: "Spring Boot",
+      icon: SiSpring
+    },
+
+    {
       nome: "Git",
       icon: BsGit,
     }
   ];
 
   return (
-    <section className="mb-6 md:m-0 relative bg-zinc-900">
+    <section className="relative bg-zinc-900 py-4">
       <a id="sobre"></a>
 
       <div className="max-w-[1200px] h-auto flex flex-col gap-8 mx-auto py-6">
@@ -70,12 +80,14 @@ export function Conhecimentos() {
         <div className="w-full h-full flex flex-row items-center justify-center">
           <div className="w-full grid grid-cols-3 md:grid-cols-projetos gap-6">
             {technologias.map((item: TechnologiasType, key: Key) => (
-              <div
-                key={key}
-                className={`w-[65%] h-14 max-h-16 md:h-28 md:max-h-[120px] relative flex items-center justify-center mx-auto border-2 border-zinc-800 hover:border-[#CD5FF8] rounded-lg transition-all text-white`}
-              >
-                <div className="h-3/4">
-                  <item.icon className={`w-full h-full`} />
+              <div className="w-full flex items-center justify-center">
+                <div
+                  key={key}
+                  className={`w-[65%] h-14 max-h-16 md:h-28 md:max-h-[120px] relative flex items-center justify-center mr-auto border-2 border-zinc-800 hover:border-[#CD5FF8] rounded-lg transition-all text-white`}
+                >
+                  <div className="h-3/4">
+                    <item.icon className={`w-full h-full`} />
+                  </div>
                 </div>
               </div>
             ))}
