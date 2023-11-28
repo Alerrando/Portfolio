@@ -28,7 +28,7 @@ export function Contact() {
   return (
     <footer className="bg-zinc-900 px-2 py-10 md:px-16 flex flex-col gap-6">
       <Title title="Contato" />
-      <a id="contato"></a>
+      <a id="contact"></a>
       <div className="w-full h-auto">
         <div className="block md:grid grid-cols-2">
           <div className="w-full h-full border-b-[1px] md:border-r-[1px] border-zinc-600">
@@ -73,7 +73,7 @@ export function Contact() {
               <textarea
                 cols={30}
                 rows={8}
-                className="md:w-3/5 px-2 py-1 outline-none resize-none rounded-md"
+                className="w-full md:w-3/5 px-2 py-1 outline-none resize-none rounded-md"
                 name="mensagen"
                 { ...register("description") }
               ></textarea>

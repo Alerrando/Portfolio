@@ -11,25 +11,25 @@ import { MenuMobile } from "./MenuMobile";
 export function Header() {
 
   return (
-    <header className="w-full fixed md:absolute z-20">
+    <header className="w-full bg-[#2e3238] md:bg-zinc-900 fixed z-20">
       <div className="w-[88%] hidden md:flex md:items-center md:justify-between py-2 px-4">
         <div className="w-full"></div>
 
         <nav className="relative h-16 w-auto top-0 right-0 flex transition-all z-10">
-          <div className="w-full h-full grid grid-rows-sidebar bg-[#2e3238] md:bg-transparent md:flex">
+          <div className="w-full h-full grid grid-rows-sidebar md:bg-transparent md:flex">
 
             <ul className="flex flex-row items-center justify-center gap-9 text-white">
               <li className="hover:text-red-500 transition-colors text-lg">
-                <a href="#projetos">Home</a>
+                <a href="#home">Home</a>
               </li>
               <li className="hover:text-red-500 transition-colors text-lg">
-                <a href="#projetos">Projetos</a>
+                <a href="#projects">Projetos</a>
               </li>
               <li className="hover:text-red-500 transition-colors text-lg">
-                <a href="#sobre">Conhecimentos</a>
+                <a href="#knowledge">Conhecimentos</a>
               </li>
               <li className="hover:text-red-500 transition-colors text-lg">
-                <a href="#contato">Contato</a>
+                <a href="#contact">Contato</a>
               </li>
             </ul>
           </div>
