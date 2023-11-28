@@ -118,7 +118,7 @@ export function Contact() {
     </footer>
   );
 
-    async function submit(e: React.BaseSyntheticEvent){
+    async function submit(e: SchemaDataType){
       const aux = await axios.post("https://formspree.io/f/mleyvvga", e)
         .then((res) => res.data)
         .catch((err) => console.log(err))
