@@ -75,10 +75,10 @@ export function Knowledge() {
     <section className="relative bg-zinc-900 py-4">
       <a id="sobre"></a>
 
-      <div className="max-w-[1200px] h-auto flex flex-col gap-8 mx-auto py-6">
+      <div className="max-w-[95%] h-auto flex flex-col gap-8 ml-auto py-6">
         <Title title="Conhecimentos" />
         <div className="w-full h-full flex flex-row items-center justify-center">
-          <div className="w-full grid grid-cols-3 md:grid-cols-projetos gap-6">
+          <div className="w-full grid grid-cols-3 md:grid-cols-projects-web gap-6">
             {technologias.map((item: TechnologiasType, key: Key) => (
               <div className="w-full flex items-center justify-center" key={key}>
                 <div

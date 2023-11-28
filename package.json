@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.13",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.3.2",
+    "@phosphor-icons/react": "^2.0.15",
     "axios": "^1.6.1",
     "caniuse-lite": "^1.0.30001519",
     "phosphor-react": "^1.4.1",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@vercel/node": "^3.0.11",
     "@vitejs/plugin-react": "^2.0.1",
     "autoprefixer": "^10.4.8",
     "cross-env": "^7.0.3",

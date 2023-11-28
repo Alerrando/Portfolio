@@ -13,9 +13,9 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const schemaData = z.object({
-  name: z.string().nullable("Nome obrigatorio"),
-  email: z.string().email().nullable("Email obrigatorio"),
-  description: z.string().nullable("Descrição obrigatorio"),
+  name: z.string().nonempty("Nome obrigatorio"),
+  email: z.string().email().nonempty("Email obrigatorio"),
+  description: z.string().nonempty("Descrição obrigatorio"),
 })
 
 type SchemaDataType = z.infer<typeof schemaData>
@@ -45,7 +45,6 @@ export function Contact() {
               <input
                 type="text"
                 placeholder="Digite seu nome..."
-                name="name"
                 className="mb-3 w-full md:w-2/5 py-1 px-2 outline-none rounded-md"
                 { ...register("name") }
               />
@@ -60,7 +59,6 @@ export function Contact() {
               <input
                 type="email"
                 placeholder="Digite seu email..."
-                name="email"
                 className="mb-3 w-full md:w-2/5 py-1 px-2 outline-none rounded-md"
                 { ...register("email") }
               />
@@ -120,7 +118,7 @@ export function Contact() {
     </footer>
   );
 
-    async function submit(e){
+    async function submit(e: React.BaseSyntheticEvent){
       const aux = await axios.post("https://formspree.io/f/mleyvvga", e)
         .then((res) => res.data)
         .catch((err) => console.log(err))

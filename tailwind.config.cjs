@@ -16,7 +16,8 @@ module.exports = {
         sidebar: "10% 70% 15%",
       },
       gridTemplateColumns: {
-        "projetos": "repeat(auto-fit, minmax(300px, 1fr));",
+        "projects-web": "repeat(auto-fit, minmax(450px, 1fr));",
+        "projects-mobile": "repeat(auto-fit, minmax(300px, 1fr));",
       },
 
       textColor: {

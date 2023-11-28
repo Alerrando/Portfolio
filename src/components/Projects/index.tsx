@@ -1,6 +1,5 @@
-import { Key, useState } from "react";
-import { Title } from "../Title";
 import { GithubLogo, Monitor } from "phosphor-react";
+import { Title } from "../Title";
 
 type ProjectsTypes = {
   title: string,
@@ -104,13 +103,12 @@ export function Projetos() {
   return (
     <section className="bg-zinc-900 py-4">
       <a id="projetos"></a>
-      <div className="max-w-[1200px] flex flex-col gap-10 mx-auto py-6">
+      <div className="max-w-[90%] flex flex-col gap-10 mx-auto py-6">
         <Title title={"Projetos"} />
 
-        <div className="grid grid-cols-projetos gap-6">
+        <div className="grid grid-cols-projects-mobile md:grid-cols-projects-web gap-6">
           {projects.map((projeto: ProjectsTypes, index: number) => (
-            <>
-              <div className="max-h-[200px] relative text-center group border border-zinc-400 rounded-xl" key={index}>
+              <div className="max-h-[350px] md:max-h-[500px] relative text-center group border border-zinc-400 rounded-xl" key={index}>
                 <div className="w-full h-full">
                   <img
                     src={projeto.img}
@@ -119,24 +117,23 @@ export function Projetos() {
                   />
                 </div>
 
+                <div className="absolute top-[9%] inset-x-0 flex items-start justify-center gap-16 text-white md:hidden md:group-hover:flex transition-all">
+                  <a href={projeto.githubSite} target="_blank">
+                    <GithubLogo className="w-6 h-6 md:h-7 md:w-7 text-black" />
+                  </a>
+                  <a href={projeto.desktopSite} target="_blank">
+                    <Monitor className="w-6 h-6 md:h-7 md:w-7 text-black" />
+                  </a>
+                </div>
                 <div className="absolute w-full border-none outline-none ease-in-out bottom-0 py-4 md:hidden md:group-hover:block transition-all">
-                  <div className="alinhamento justify-center pb-8 gap-16 text-white">
-                    <a href={projeto.githubSite} target="_blank">
-                      <GithubLogo size={22} className="text-black" />
-                    </a>
-                    <a href={projeto.desktopSite} target="_blank">
-                      <Monitor size={22} className="text-black" />
-                    </a>
-                  </div>
-                  <h2 className="font-roboto text-xl font-bold text-[#20b2aa]">
+                  <h2 className="font-roboto text-xl md:text-2xl font-bold text-[#20b2aa]">
                     {projeto.title}
                   </h2>
-                  <span className="font-playfair font-bold text-xs text-orange-500">
+                  <span className="font-playfair font-bold text-xs md:text-sm text-orange-500">
                     {projeto.subTitle}
                   </span>
                 </div>
               </div>
-            </>
           ))}
         </div>
       </div>
