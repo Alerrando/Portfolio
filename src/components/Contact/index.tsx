@@ -35,7 +35,7 @@ export function Contact() {
             <h2 className="font-roboto text-xl md:text-2xl font-bold text-white">
               Entre em contato
             </h2>
-            <form className="block md:grid md:w-full w-11/12 py-6" onSubmit={handleSubmit(submit)}>
+            <form className="block md:grid w-11/12 py-6" onSubmit={handleSubmit(submit)}>
               <label
                 className="font-times text-lg font-semibold text-white"
                 htmlFor="name"
@@ -45,7 +45,7 @@ export function Contact() {
               <input
                 type="text"
                 placeholder="Digite seu nome..."
-                className="mb-3 w-full md:w-2/5 py-1 px-2 outline-none rounded-md"
+                className="mb-3 w-full py-1 px-2 outline-none rounded-md"
                 { ...register("name") }
               />
               { errors.name && <span className="text-red-500 pt-2">{errors.name.message}</span> }
@@ -59,7 +59,7 @@ export function Contact() {
               <input
                 type="email"
                 placeholder="Digite seu email..."
-                className="mb-3 w-full md:w-2/5 py-1 px-2 outline-none rounded-md"
+                className="mb-3 w-full py-1 px-2 outline-none rounded-md"
                 { ...register("email") }
               />
               { errors.email && <span className="text-red-500 pt-2">{errors.email.message}</span> }
@@ -73,7 +73,7 @@ export function Contact() {
               <textarea
                 cols={30}
                 rows={8}
-                className="w-full md:w-3/5 px-2 py-1 outline-none resize-none rounded-md"
+                className="w-full px-2 py-1 outline-none resize-none rounded-md"
                 { ...register("description") }
               ></textarea>
               { errors.description && <span className="text-red-500 pt-2">{errors.description.message}</span> }

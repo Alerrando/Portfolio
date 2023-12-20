@@ -77,7 +77,7 @@ export function Knowledge() {
 
       <div className="max-w-[95%] h-auto flex flex-col gap-8 ml-auto py-6">
         <Title title="Conhecimentos" />
-        <div className="w-[95%] md:w-full h-full flex flex-row items-center justify-center mr-auto">
+        <div className="w-[95%] md:w-full h-full flex flex-row items-start justify-center mr-auto">
           <div className="w-full grid grid-cols-3 md:grid-cols-projects-web gap-6">
             {technologias.map((item: TechnologiasType, key: Key) => (
               <div className="w-full flex items-center justify-center" key={key}>

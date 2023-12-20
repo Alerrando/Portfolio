@@ -103,10 +103,10 @@ export function Projetos() {
   return (
     <section className="bg-zinc-900 py-4">
       <a id="projects"></a>
-      <div className="max-w-[90%] flex flex-col gap-10 mx-auto py-6">
+      <div className="max-w-[90%] flex flex-col items-start justify-center gap-10 mx-auto py-6">
         <Title title={"Projetos"} />
 
-        <div className="grid grid-cols-projects-mobile md:grid-cols-projects-web gap-6">
+        <div className="w-full grid grid-cols-projects-mobile md:grid-cols-projects-web gap-6">
           {projects.map((projeto: ProjectsTypes, index: number) => (
               <div className="max-h-[350px] md:max-h-[500px] relative text-center group rounded-xl" key={index}>
                 <div className="w-full h-full">
