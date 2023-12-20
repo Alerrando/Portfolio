@@ -74,7 +74,6 @@ export function Contact() {
                 cols={30}
                 rows={8}
                 className="w-full md:w-3/5 px-2 py-1 outline-none resize-none rounded-md"
-                name="mensagen"
                 { ...register("description") }
               ></textarea>
               { errors.description && <span className="text-red-500 pt-2">{errors.description.message}</span> }
