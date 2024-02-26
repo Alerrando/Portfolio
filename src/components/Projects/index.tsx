@@ -89,11 +89,21 @@ const projects: ProjectsTypes[] = [
 
   {
     title: "Sistema de Gerenciamento Escolar",
-    subTitle: "Projeto Sistema de Gerenciamento Escolar",
+    subTitle: "Projeto Sistema de Gerenciamento Escolar com ReactJS e Spring Boot", 
     img: "Projetos/projeto9.png",
     alt: "Projeto de gerenciamento escolar",
     githubSite: "https://github.com/Alerrando/sistema-seduc",
     desktopSite: "https://sistema-seduc.vercel.app",
+    projectFilter: "React",
+  },
+
+  {
+    title: "Clone do Notion",
+    subTitle: "Projeto Notion Clone feito com ReactJS",
+    img: "Projetos/projeto10.png",
+    alt: "Projeto do notion clone",
+    githubSite: "https://github.com/Alerrando/Notion-Clone",
+    desktopSite: "https://notion-clone-alerrando.vercel.app",
     projectFilter: "React",
   },
 ];
@@ -108,32 +118,32 @@ export function Projetos() {
 
         <div className="w-full grid grid-cols-projects-mobile md:grid-cols-projects-web gap-6">
           {projects.map((projeto: ProjectsTypes, index: number) => (
-              <div className="max-h-[350px] md:max-h-[500px] relative text-center group rounded-xl" key={index}>
-                <div className="w-full h-full">
-                  <img
-                    src={projeto.img}
-                    alt={projeto.alt}
-                    className="rounded-xl w-full h-full"
-                  />
-                </div>
-
-                <div className="absolute top-[9%] inset-x-0 flex items-start justify-center gap-16 text-white md:hidden md:group-hover:flex transition-all">
-                  <a href={projeto.githubSite} target="_blank">
-                    <GithubLogo className="w-6 h-6 md:h-7 md:w-7 text-black" />
-                  </a>
-                  <a href={projeto.desktopSite} target="_blank">
-                    <Monitor className="w-6 h-6 md:h-7 md:w-7 text-black" />
-                  </a>
-                </div>
-                <div className="absolute w-full border-none outline-none ease-in-out bottom-0 py-4 md:hidden md:group-hover:block transition-all">
-                  <h2 className="font-roboto text-xl md:text-2xl font-bold text-[#20b2aa]">
-                    {projeto.title}
-                  </h2>
-                  <span className="font-playfair font-bold text-xs md:text-sm text-orange-500">
-                    {projeto.subTitle}
-                  </span>
-                </div>
+            <div className="max-h-[350px] md:max-h-[500px] relative text-center group rounded-xl" key={index}>
+              <div className="w-full h-full">
+                <img
+                  src={projeto.img}
+                  alt={projeto.alt}
+                  className="rounded-xl w-full h-full"
+                />
               </div>
+
+              <div className="absolute top-[9%] inset-x-0 flex items-start justify-center gap-16 text-white md:hidden md:group-hover:flex transition-all">
+                <a href={projeto.githubSite} target="_blank">
+                  <GithubLogo className="w-6 h-6 md:h-7 md:w-7 text-black" />
+                </a>
+                <a href={projeto.desktopSite} target="_blank">
+                  <Monitor className="w-6 h-6 md:h-7 md:w-7 text-black" />
+                </a>
+              </div>
+              <div className="absolute w-full border-none outline-none ease-in-out bottom-0 py-4 md:hidden md:group-hover:block transition-all">
+                <h2 className="font-roboto text-xl md:text-2xl font-bold text-[#20b2aa]">
+                  {projeto.title}
+                </h2>
+                <span className="font-playfair font-bold text-xs md:text-sm text-orange-500">
+                  {projeto.subTitle}
+                </span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
