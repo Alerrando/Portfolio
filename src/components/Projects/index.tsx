@@ -50,7 +50,10 @@ const projects: ProjectsType[] = [
     data: [
       {
         title: "Google",
-        description: "Projeto de cópia da Google",
+        description: `O "Google Clone" é um projeto que visa replicar o layout e a funcionalidade básica da página inicial do Google, 
+        incluindo o icônico menu de aplicativos. Este projeto foi desenvolvido com o objetivo de praticar e demonstrar habilidades em HTML, 
+        CSS e JavaScript, recriando a interface limpa e intuitiva do Google, que é amplamente reconhecida por sua simplicidade e eficiência.`
+        ,
         img: "Projetos/projeto3.png",
         alt: "Projeto Google",
         githubSite: "https://github.com/Alerrando/Google",
@@ -142,17 +145,17 @@ const projects: ProjectsType[] = [
 export function Projetos() {
 
   return (
-    <section className="py-4">
+    <section className="bg-zinc-900 py-4">
       <a id="projects"></a>
       <div className="max-w-[90%] flex flex-col items-start justify-center gap-10 mx-auto py-6">
         <Title title={"Projetos"} />
         <div className="w-full flex gap-6 overflow-x-auto">
           {projects.map((project: ProjectsType, index: number) => (
             <div className="min-w-full flex flex-col gap-12 pb-6" key={index}>
-                {project.data.map((projectInfo: ProjectType, indexProject: number) => (
-                  <div className={`w-full h-[360px] flex ${indexProject === 1 && "flex-row-reverse"} gap-24`} key={indexProject}>
+                {project.data.map((projectInfo: ProjectTypesProps, indexProject: number) => (
+                  <div className={`w-full h-auto flex flex-col md:flex-row ${indexProject === 1 && "md:flex-row-reverse"} gap-24 text-white`} key={indexProject}>
                     <aside className="w-full h-full">
-                      <img src={projectInfo.img} alt={`projetc-${projectInfo.title}`} className="w-full h-full" />
+                      <img src={projectInfo.img} alt={`projetc-${projectInfo.title}`} className="w-full h-full rounded-lg" />
                     </aside>
     
                     <div className="w-full h-full flex flex-col gap-7 items-start justify-start">
