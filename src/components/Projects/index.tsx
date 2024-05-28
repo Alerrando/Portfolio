@@ -21,7 +21,7 @@ const projects: ProjectsType[] = [
   {
     data: [
       {
-        title: "Clipboard landing page master",
+        title: "Clipboard landing page",
         description: `Este projeto é uma página de destino para um produto chamado Clipboard, desenvolvida como parte de um desafio do Frontend Mentor. 
           A página de destino foi construída utilizando HTML e CSS, com um design limpo e responsivo que se adapta a diferentes dispositivos. 
           O objetivo do projeto é demonstrar a capacidade de criar uma página web visualmente atraente e funcional, seguindo as melhores práticas 
@@ -157,21 +157,21 @@ export function Projetos() {
   return (
     <section className="bg-zinc-900 py-4">
       <a id="projects"></a>
-      <div className="flex flex-col items-start justify-center gap-10 mx-auto py-6 px-12">
+      <div className="flex flex-col items-start justify-center gap-10 mx-auto py-6 px-6 md:px-12">
         <Title title={"Projetos"} />
         <Carousel className="w-full flex gap-6 overflow-x-hidden">
           <CarouselContent>
             {projects.map((project: ProjectsType, index: number) => (
-              <CarouselItem className="min-w-full flex flex-col gap-12 pb-6" key={index}>
+              <CarouselItem className="min-w-full flex flex-col justify-between md:gap-12 pb-6 space-y-2" key={index}>
                   {project.data.map((projectInfo: ProjectTypesProps, indexProject: number) => (
-                    <div className={`w-full h-auto flex flex-col md:flex-row ${indexProject === 1 && "md:flex-row-reverse"} gap-24 text-white`} key={indexProject}>
+                    <div className={`w-full h-auto flex flex-col-reverse md:flex-row ${indexProject === 1 && "md:flex-row-reverse"} gap-12 md:gap-24 text-white`} key={indexProject}>
                       <aside className="w-full h-full">
-                        <img src={projectInfo.img} alt={`projetc-${projectInfo.title}`} className="w-full h-full rounded-lg" />
+                        <img src={projectInfo.img} alt={`projetc-${projectInfo.title}`} className="w-full h-48 md:h-full rounded-lg" />
                       </aside>
       
                       <div className="w-full h-full flex flex-col gap-7 items-start justify-start">
                         <div className="flex flex-col gap-6">
-                          <h2 className="text-4xl font-bold">{projectInfo.title}</h2>
+                          <h2 className="text-3xl md:text-4xl font-bold">{projectInfo.title}</h2>
                           
                           <div className="flex gap-3">
                             {projectInfo.projectFilter.map((category: string, indexCategory: Key) => (
@@ -182,7 +182,7 @@ export function Projetos() {
                           </div>
                         </div>
       
-                        <span>{projectInfo.description}</span>
+                        <span className="text-sm md:text-base">{truncateDescription(projectInfo.description)}</span>
 
                         <div className="flex gap-2 mx-auto mt-auto">
                             <a href={projectInfo.githubSite} target="_blank" rel="noreferrer">
@@ -204,4 +204,13 @@ export function Projetos() {
       </div>
     </section>
   );
+
+  function truncateDescription(description: string){
+    const maxLength = 120;
+    if (window.innerWidth < 767 && description.length > maxLength) {
+      return description.substring(0, maxLength) + "...";
+    } else {
+      return description;
+    }
+  };
 }
