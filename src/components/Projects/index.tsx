@@ -149,7 +149,6 @@ const projects: ProjectsType[] = [
       },
     ]
   }
-
 ];
 
 export function Projetos() {
@@ -158,7 +157,22 @@ export function Projetos() {
     <section className="bg-zinc-900 py-4">
       <a id="projects"></a>
       <div className="flex flex-col items-start justify-center gap-10 mx-auto py-6 px-6 md:px-12">
-        <Title title={"Projetos"} />
+        <div className="w-full grid grid-cols-2">
+          <Title title={"Projetos"} />
+          
+          <form className="w-[45%] flex flex-col items-start justify-end ml-auto">
+            <label htmlFor="filter-projects" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Escolher filtro de projetos</label>
+            <select 
+                id="filter-projects" 
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                onChange={e => handleFilterProject(e)}
+              >
+              <option selected value="">Todos Projetos</option>
+              <option value="personal-project">Projetos Pessoais</option>
+              <option value="freela">Freela</option>
+            </select>
+          </form>
+        </div>
         <Carousel className="w-full flex gap-6 overflow-x-hidden">
           <CarouselContent>
             {projects.map((project: ProjectsType, index: number) => (
@@ -213,4 +227,8 @@ export function Projetos() {
       return description;
     }
   };
+
+  function handleFilterProject(e: React.ChangeEvent<HTMLSelectElement>){
+    console.log(e.target.value);
+  }
 }
