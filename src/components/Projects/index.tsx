@@ -80,6 +80,22 @@ const projects: ProjectsType[] = [
       },
     ]
   },
+  {
+    data: [
+      {
+        title: "Lanchonete Pequim",
+        description: `O projeto "Landing Page - Lanchonete Pequim" é uma aplicação web desenvolvida para a renomada lanchonete Pequim, situada em Presidente Prudente. 
+        Esta landing page foi construída utilizando as mais modernas tecnologias, incluindo TypeScript, TailwindCSS e React, com o objetivo de proporcionar uma 
+        experiência de navegação fluida e visualmente atraente para os usuários.`,
+        img: "Projetos/projeto5.png",
+        alt: "Projeto de Lanchonete Pequim",
+        githubSite: "https://github.com/Pixel-Pair-Devs/Lanchonete-Pequim",
+        desktopSite: "https://pequim-lanchonete.vercel.app",
+        projectFilter: ["React", "Typescript", "TailwindCSS"],
+        projectType: "freela"
+      },
+    ]
+  },
 ];
 
 export function Projetos() {
@@ -160,17 +176,23 @@ export function Projetos() {
     }
   };
 
-  function handleprojectType(e: React.ChangeEvent<HTMLSelectElement>) {
+  function handleprojectType(e: React.ChangeEvent<HTMLSelectElement>){
     const filterValue = e.target.value;
-  
-    if (filterValue === "") {
+    const filter: ProjectTypesProps[] = [];
+    if (filterValue === "Todos") {
       setFilteredProjects(projects);
-    } else {
-      const filtered = projects.map(project => ({
-        data: project.data.filter(item => item.projectType === filterValue)
-      })).filter(project => project.data.length > 0);
-  
-      setFilteredProjects(filtered);
+    } else{
+      projects.forEach((project) => {
+          const aux = {
+            data: [],
+          }
+          project.data.forEach((item) => item.projectType === filterValue && aux.data.push(item))
+
+          if(aux.data.length > 0){
+            filter.push(aux);
+          }
+        })
+      setFilteredProjects(filter)
     }
-  }  
+  }
 }
