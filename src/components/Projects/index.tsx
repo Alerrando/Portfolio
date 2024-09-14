@@ -1,6 +1,6 @@
 import { GithubLogo, Monitor } from "phosphor-react";
-import { Title } from "../Title";
 import { Key, useState } from "react";
+import { Title } from "../Title";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 
 type ProjectsType = {
@@ -15,7 +15,7 @@ type ProjectTypesProps = {
   githubSite: string,
   desktopSite: string,
   projectFilter: string[],
-  projectType: "personal-project" | "freela",
+  projectType: "personal-project" | "freela" | "Todos",
 }
 
 const projects: ProjectsType[] = [
@@ -99,7 +99,7 @@ const projects: ProjectsType[] = [
 ];
 
 export function Projetos() {
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [filteredProjects, setFilteredProjects] = useState<string>("Todos");
 
   return (
     <section className="bg-zinc-900 py-4">
@@ -107,14 +107,14 @@ export function Projetos() {
       <div className="flex flex-col items-start justify-center gap-10 mx-auto py-6 px-6 md:px-12">
         <div className="w-full grid grid-cols-2">
           <Title title={"Projetos"} />
-          
+
           <form className="w-[45%] flex flex-col items-start justify-end ml-auto">
             <label htmlFor="filter-projects" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Escolher filtro de projetos</label>
-            <select 
-                id="filter-projects" 
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                onChange={e => handleprojectType(e)}
-              >
+            <select
+              id="filter-projects"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              onChange={e => setFilteredProjects(e.target.value)}
+            >
               <option selected value="">Todos Projetos</option>
               <option value="personal-project">Projetos Pessoais</option>
               <option value="freela">Freela</option>
@@ -123,40 +123,40 @@ export function Projetos() {
         </div>
         <Carousel className="w-full flex gap-6 overflow-x-hidden">
           <CarouselContent>
-            {filteredProjects.map((project: ProjectsType, index: number) => (
+            {handleprojectType().map((project: ProjectsType, index: number) => (
               <CarouselItem className="min-w-full flex flex-col justify-between md:gap-12 pb-6 space-y-2" key={index}>
-                  {project.data.map((projectInfo: ProjectTypesProps, indexProject: number) => (
-                    <div className={`w-full h-auto flex flex-col-reverse md:flex-row ${indexProject === 1 && "md:flex-row-reverse"} gap-12 md:gap-24 text-white`} key={indexProject}>
-                      <aside className="w-full h-full">
-                        <img src={projectInfo.img} alt={`projetc-${projectInfo.title}`} className="w-full h-48 md:h-full rounded-lg" />
-                      </aside>
-      
-                      <div className="w-full h-full flex flex-col gap-7 items-start justify-start">
-                        <div className="flex flex-col gap-6">
-                          <h2 className="text-3xl md:text-4xl font-bold">{projectInfo.title}</h2>
-                          
-                          <div className="flex gap-3">
-                            {projectInfo.projectFilter.map((category: string, indexCategory: Key) => (
-                              <div className="text-white bg-[#26BBA5] font-bold  px-3 py-2 rounded-lg cursor-pointer hover:bg-[#26BBA5]/90" key={indexCategory}>
-                                {category}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-      
-                        <span className="text-sm md:text-base">{truncateDescription(projectInfo.description)}</span>
+                {project.data.map((projectInfo: ProjectTypesProps, indexProject: number) => (
+                  <div className={`w-full h-auto flex flex-col-reverse md:flex-row ${indexProject === 1 && "md:flex-row-reverse"} gap-12 md:gap-24 text-white`} key={indexProject}>
+                    <aside className="w-full h-full">
+                      <img src={projectInfo.img} alt={`projetc-${projectInfo.title}`} className="w-full h-48 md:h-full rounded-lg" />
+                    </aside>
 
-                        <div className="flex gap-2 mx-auto mt-auto">
-                            <a href={projectInfo.githubSite} target="_blank" rel="noreferrer">
-                              <GithubLogo className="w-8 h-8" />
-                            </a>
-                            <a href={projectInfo.desktopSite} target="_blank" rel="noreferrer">
-                              <Monitor className="w-8 h-8" />
-                            </a>
+                    <div className="w-full h-full flex flex-col gap-7 items-start justify-start">
+                      <div className="flex flex-col gap-6">
+                        <h2 className="text-3xl md:text-4xl font-bold">{projectInfo.title}</h2>
+
+                        <div className="flex gap-3">
+                          {projectInfo.projectFilter.map((category: string, indexCategory: Key) => (
+                            <div className="text-white bg-[#26BBA5] font-bold  px-3 py-2 rounded-lg cursor-pointer hover:bg-[#26BBA5]/90" key={indexCategory}>
+                              {category}
+                            </div>
+                          ))}
                         </div>
                       </div>
+
+                      <span className="text-sm md:text-base">{truncateDescription(projectInfo.description)}</span>
+
+                      <div className="flex gap-2 mx-auto mt-auto">
+                        <a href={projectInfo.githubSite} target="_blank" rel="noreferrer">
+                          <GithubLogo className="w-8 h-8" />
+                        </a>
+                        <a href={projectInfo.desktopSite} target="_blank" rel="noreferrer">
+                          <Monitor className="w-8 h-8" />
+                        </a>
+                      </div>
                     </div>
-                  ))}
+                  </div>
+                ))}
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -167,7 +167,7 @@ export function Projetos() {
     </section>
   );
 
-  function truncateDescription(description: string){
+  function truncateDescription(description: string) {
     const maxLength = 120;
     if (window.innerWidth < 767 && description.length > maxLength) {
       return description.substring(0, maxLength) + "...";
@@ -176,23 +176,16 @@ export function Projetos() {
     }
   };
 
-  function handleprojectType(e: React.ChangeEvent<HTMLSelectElement>){
-    const filterValue = e.target.value;
-    const filter: ProjectTypesProps[] = [];
-    if (filterValue === "Todos") {
-      setFilteredProjects(projects);
-    } else{
-      projects.forEach((project) => {
-          const aux = {
-            data: [],
-          }
-          project.data.forEach((item) => item.projectType === filterValue && aux.data.push(item))
-
-          if(aux.data.length > 0){
-            filter.push(aux);
-          }
-        })
-      setFilteredProjects(filter)
-    }
+  function handleprojectType() {
+    if (filteredProjects === "Todos") {
+      return projects;
+    } 
+  
+    return projects
+      .map(project => ({
+        data: project.data.filter(item => item.projectType === filteredProjects),
+      }))
+      .filter(project => project.data.length > 0);
   }
+  
 }
