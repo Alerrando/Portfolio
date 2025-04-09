@@ -1,5 +1,4 @@
-import { Tab } from "@headlessui/react";
-import { Fragment, Key } from "react";
+import { Key, useEffect, useRef } from "react";
 import { AiFillHtml5 } from "react-icons/ai";
 import { BsGit } from 'react-icons/bs';
 import { DiCss3, DiJavascript1, DiSass } from "react-icons/di";
@@ -15,82 +14,105 @@ type TechnologiasType = {
 };
 
 export function Knowledge() {
-  const technologias: TechnologiasType[] = [
-    {
-      nome: "Html",
-      icon: AiFillHtml5,
-    },
-    {
-      nome: "Css",
-      icon: DiCss3,
-    },
-    {
-      nome: "Javascript",
-      icon: DiJavascript1,
-    },
-    {
-      nome: "Sass",
-      icon: FaSass
-    },
-    {
-      nome: "React-Js",
-      icon: FaReact,
-    },
-    {
-      nome: "Tailwind-Css",
-      icon: SiTailwindcss,
-    },
-    {
-      nome: "Next-Js",
-      icon: TbBrandNextjs,
-    },
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
 
-    {
-      nome: "Scss",
-      icon: DiSass,
-    },
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (headingRef.current) {
+              headingRef.current.classList.add("animate-fade-in");
+              headingRef.current.classList.remove("opacity-0");
+            }
+            if (skillsRef.current) {
+              skillsRef.current.classList.add("animate-fade-in");
+              skillsRef.current.classList.remove("opacity-0");
 
-    {
-      nome: "Mui-Core",
-      icon: SiMui,
-    },
+              // Animate each skill item with delay
+              const items = skillsRef.current.querySelectorAll(".skill-item");
+              items.forEach((item, index) => {
+                setTimeout(() => {
+                  (item as HTMLElement).classList.add("animate-fade-in");
+                  (item as HTMLElement).classList.remove("opacity-0");
+                }, index * 100);
+              });
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
 
-    {
-      nome: "Java",
-      icon: FaJava
-    },
-
-    {
-      nome: "Spring Boot",
-      icon: SiSpring
-    },
-
-    {
-      nome: "Git",
-      icon: BsGit,
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const skills = [
+    { name: "HTML", icon: "devicon-html5-plain" },
+    { name: "CSS", icon: "devicon-css3-plain" },
+    { name: "JavaScript", icon: "devicon-javascript-plain" },
+    { name: "TypeScript", icon: "devicon-typescript-plain" },
+    { name: "React", icon: "devicon-react-original" },
+    { name: "Next.js", icon: "devicon-nextjs-plain" },
+    { name: "Sass", icon: "devicon-sass-original" },
+    { name: "Tailwind", icon: "devicon-tailwindcss-original" },
+    { name: "Jest", icon: "devicon-jest-plain" },
+    { name: "Playwright", icon: "devicon-playwright-plain" },
+    { name: "Redux", icon: "devicon-redux-original" },
+    { name: "Electron", icon: "devicon-electron-original" },
+    { name: "Java", icon: "devicon-java-plain" },
+    { name: "Spring Boot", icon: "devicon-spring-original" },
+    { name: "MySQL", icon: "devicon-mysql-plain" },
+    { name: "Mongo", icon: "devicon-mongodb-plain" },
+    { name: "Postgresql", icon: "devicon-postgresql-plain" },
+    { name: "Git", icon: "devicon-git-plain" },
+    { name: "Docker", icon: "devicon-docker-plain" },
+    { name: "Figma", icon: "devicon-figma-plain" },
   ];
 
   return (
-    <section className="relative bg-zinc-900 py-4">
-      <a id="knowledge"></a>
+    <section
+      id="skills"
+      ref={sectionRef}
+      className="section-padding relative bg-secondary/30"
+    >
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
 
-      <div className="max-w-[95%] h-auto flex flex-col gap-8 ml-auto py-6">
-        <Title title="Conhecimentos" />
-        <div className="w-[95%] md:w-full h-full flex flex-row items-start justify-center mr-auto">
-          <div className="w-full grid grid-cols-3 md:grid-cols-projects-web gap-6">
-            {technologias.map((item: TechnologiasType, key: Key) => (
-              <div className="w-full flex items-center justify-center" key={key}>
-                <div
-                  className={`w-full md:w-[65%] h-20 max-h-20 md:h-28 md:max-h-[120px] relative flex items-center justify-center mr-auto border-2 border-zinc-800 hover:border-[#CD5FF8] rounded-lg transition-all text-white`}
-                >
-                  <div className="h-3/4">
-                    <item.icon className={`w-full h-full`} />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="container mx-auto relative z-10">
+        <h2
+          ref={headingRef}
+          className="text-4xl font-bold mb-16 text-center opacity-0"
+        >
+          <span className="text-gradient">Tecnologias</span>
+        </h2>
+
+        <div
+          ref={skillsRef}
+          className="opacity-0 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8"
+        >
+          {skills.map((skill, index) => (
+            <div
+              key={skill.name}
+              className="skill-item opacity-0 glass rounded-lg p-6 flex flex-col items-center hover:bg-white/5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(79,70,229,0.3)]"
+            >
+              <i className={`${skill.icon} text-5xl mb-4 text-primary`}></i>
+              <span className="text-sm font-medium">{skill.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

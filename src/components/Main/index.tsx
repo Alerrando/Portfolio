@@ -1,36 +1,64 @@
+import { ChevronDown } from "lucide-react";
+
 export function Main() {
   return (
-    <main className="w-full h-auto md:h-screen bg-zinc-900">      
-      <a id="home"></a>
-      <div className="w-full h-full flex flex-col-reverse items-center justify-between md:grid md:grid-cols-2 px-5 md:px-20 z-50">
-        <div className="w-full h-full flex flex-col items-start justify-center gap-4">
-          <div className="w-auto bg-white rounded-lg p-2 md:py-3 md:px-4">
-            <span className="text-[#CD5FF8] text-base md:text-xl font-roboto font-bold">Desenvolvedor Front End</span>
-          </div>
-
-          <h1 className="text-white text-[28px] md:text-4xl font-bold font-roboto uppercase">
-            Alerrando Breno
+    <section 
+    id="home" 
+    className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden"
+  >
+    <div className="absolute inset-0 bg-grid"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/90 to-background"></div>
+    
+    <div className="container mx-auto relative z-10">
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-xl">
+          <p className="text-primary font-mono mb-6 opacity-0 animate-fade-in">
+            Olá, meu nome é
+          </p>
+          
+          <h1 className="text-4xl md:text-7xl font-bold mb-4 opacity-0 animate-fade-in delay-100">
+            <span className="block text-gradient-blue">Alerrando</span>
+            <span className="block mt-2 text-muted-foreground">Desenvolvedor Full Stack</span>
           </h1>
-
-          <p className="text-[#AFAFAF] text-base md:text-lg leading-snug">
-            Estou sempre procurando melhorar meu trabalho o máximo possível e adoro pedir dicas a outros 
-            desenvolvedores sobre como fazer isso. Acredito que a troca de conhecimento entre as pessoas é 
+          
+          <p className="text-xl text-muted-foreground mb-8 max-w-lg opacity-0 animate-fade-in delay-200">
+            Estou sempre procurando melhorar meu trabalho o máximo possível. Acredito que a troca de conhecimento entre as pessoas é 
             fundamental para o desenvolvimento pessoal e interpessoal de cada um.
           </p>
-
-          <div className="w-1/2 h-auto flex items-center justify-between">
-            <img src="react.svg" alt="Icone da Linguagem React" className="w-10 h-9 md:w-16 md:h-14" />
-            
-            <img src="typescript.svg" alt="Icone da Linguagem Typescript" className="w-9 h-9 md:w-16 md:h-14" />
-
-            <img src="spring-boot.svg" alt="Icone da Linguagem Spring Boot" className="w-9 h-9 md:w-16 md:h-14" />
+          
+          <div className="opacity-0 animate-fade-in delay-300">
+            <a
+              href="#projects"
+              className="px-7 py-3 bg-primary/90 hover:bg-primary text-white rounded-md 
+                transition-all duration-300 shadow-[0_0_15px_rgba(79,70,229,0.4)] 
+                hover:shadow-[0_0_25px_rgba(79,70,229,0.6)] block"
+            >
+              Confira meus projetos
+            </a>
           </div>
         </div>
-
-        <aside className="w-full h-full flex flex-col items-end justify-center">
-          <img src="aside-main.png" alt="Imagem Aside Main" className="aside-main" />
-        </aside>
+        
+        <div className="mt-12 md:mt-0 opacity-0 animate-fade-in delay-400">
+          <div className="relative w-72 h-72 md:w-96 md:h-96 animate-float">
+            <img 
+              src="aside-main.png" 
+              alt="Developer workspace with laptop" 
+              className="rounded-2xl object-cover w-full h-full"
+            />
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
+
+    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in delay-500">
+      <a 
+        href="#about" 
+        className="flex flex-col items-center text-muted-foreground hover:text-white transition-colors duration-300"
+      >
+        <span className="text-sm mb-2">Role para baixo</span>
+        <ChevronDown className="animate-bounce" size={20} />
+      </a>
+    </div>
+  </section>
   );
 }

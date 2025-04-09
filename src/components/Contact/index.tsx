@@ -1,150 +1,205 @@
-import {
-  DeviceMobileCamera,
-  Envelope,
-  FacebookLogo,
-  TwitterLogo,
-  YoutubeLogo,
-} from "phosphor-react";
-import { Title } from "../Title";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "react-toastify";
 import axios from "axios";
+import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { z } from "zod";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 const schemaData = z.object({
-  name: z.string().nonempty("Nome obrigatorio"),
-  email: z.string().email().nonempty("Email obrigatorio"),
-  description: z.string().nonempty("Descrição obrigatorio"),
-})
+  name: z.string().nonempty("Nome obrigatório"),
+  email: z.string().email("Email inválido").nonempty("Email obrigatório"),
+  description: z.string().nonempty("Descrição obrigatória"),
+});
 
-type SchemaDataType = z.infer<typeof schemaData>
+type SchemaDataType = z.infer<typeof schemaData>;
 
 export function Contact() {
-  const { register, handleSubmit, formState: { disabled, errors } } = useForm<SchemaDataType>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<SchemaDataType>({
     resolver: zodResolver(schemaData),
   });
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (contentRef.current) {
+              contentRef.current.classList.add("animate-fade-in-right");
+              contentRef.current.classList.remove("opacity-0");
+            }
+            if (formRef.current) {
+              formRef.current.classList.add("animate-fade-in-left");
+              formRef.current.classList.remove("opacity-0");
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  async function submit(data: SchemaDataType) {
+    try {
+      await axios.post("/api/contact", data);
+
+      toast.success("Mensagem enviada com sucesso!");
+      reset(); // limpa os campos após sucesso
+    } catch (err) {
+      console.error(err);
+      toast.error("Erro ao enviar mensagem.");
+    }
+  }
 
   return (
-    <footer className="bg-zinc-900 px-2 py-10 md:px-16 flex flex-col gap-6">
-      <Title title="Contato" />
-      <a id="contact"></a>
-      <div className="w-full h-auto">
-        <div className="block md:grid grid-cols-2">
-          <div className="w-full h-full border-b-[1px] md:border-r-[1px] border-zinc-600">
-            <h2 className="font-roboto text-xl md:text-2xl font-bold text-white">
-              Entre em contato
-            </h2>
-            <form className="block md:grid w-11/12 py-6" onSubmit={handleSubmit(submit)}>
-              <label
-                className="font-times text-lg font-semibold text-white"
-                htmlFor="name"
-              >
-                Digite seu nome
-              </label>
-              <input
-                type="text"
-                placeholder="Digite seu nome..."
-                className="mb-3 w-full py-1 px-2 outline-none rounded-md"
-                { ...register("name") }
-              />
-              { errors.name && <span className="text-red-500 pt-2">{errors.name.message}</span> }
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="section-padding relative bg-secondary/20"
+    >
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
 
-              <label
-                className="font-times text-lg font-semibold text-white"
-                htmlFor="email"
-              >
-                Digite seu email
-              </label>
-              <input
-                type="email"
-                placeholder="Digite seu email..."
-                className="mb-3 w-full py-1 px-2 outline-none rounded-md"
-                { ...register("email") }
-              />
-              { errors.email && <span className="text-red-500 pt-2">{errors.email.message}</span> }
+      <div className="container mx-auto relative z-10">
+        <h2 className="text-4xl font-bold mb-16 text-center animate-fade-in">
+          <span className="text-gradient">Entre em contato</span>
+        </h2>
 
-              <label
-                className="font-times text-lg font-semibold text-white"
-                htmlFor="mensagem"
-              >
-                Digite sua mensagem
-              </label>
-              <textarea
-                cols={30}
-                rows={8}
-                className="w-full px-2 py-1 outline-none resize-none rounded-md"
-                { ...register("description") }
-              ></textarea>
-              { errors.description && <span className="text-red-500 pt-2">{errors.description.message}</span> }
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div ref={contentRef} className="opacity-0">
+            <h3 className="text-2xl font-medium mb-6">Vamos conversar!</h3>
 
+            <p className="text-muted-foreground mb-8">
+              Estou interessado em oportunidades e colaborações freelancers.
+              Se você tem uma pergunta ou apenas quer dizer oi, vou tentar o meu
+              Melhor voltar para você!
+            </p>
 
-              <button className="bg-[#26BBA5] w-32 py-2 mt-8 rounded-full text-white opacity-80 hover:opacity-100">
-                Enviar
-              </button>
-            </form>
-          </div>
-          <div className="pt-4 md:px-8 md:pt-0 border-b-[1px] border-zinc-600">
-            <h2 className="font-roboto text-2xl font-bold text-white">
-              Formas de contato
-            </h2>
-
-            <div className="grid gap-6 mt-8 text-white">
-              <div className="flex gap-4">
-                <Envelope size={28} weight="bold" />
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center space-x-3">
+                <Mail className="text-primary" size={20} />
                 <span>alerrando2@gmail.com</span>
               </div>
 
-              <div className="flex gap-4">
-                <DeviceMobileCamera size={28} weight="bold" />
-                <span>(18)99823-3887</span>
+              <div className="flex items-center space-x-3">
+                <Phone className="text-primary" size={20} />
+                <span>+55 18 99823-3887</span>
+              </div>
+
+              <div className="flex items-center space-x-3">
+                <MapPin className="text-primary" size={20} />
+                <span>Rancharia, São Paulo - BR</span>
               </div>
             </div>
 
-            <div className="alinhamento md:grid mt-16 mb-6 gap-7">
-              <FacebookLogo size={38} weight="bold" className="cursor-pointer text-[#1877F2]" />
-              <YoutubeLogo size={38} weight="bold" className="cursor-pointer text-[#FF0000]" />
-              <TwitterLogo size={38} weight="bold" className="cursor-pointer text-[#1A8CD8]" />
+            <div className="flex space-x-4">
+              <a
+                href="https://github.com/Alerrando"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 glass rounded-full hover:bg-primary/20 transition-all duration-300"
+              >
+                <Github size={20} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/feed/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 glass rounded-full hover:bg-primary/20 transition-all duration-300"
+              >
+                <Linkedin size={20} />
+              </a>
+
+              <a
+                href="https://x.com/Allerrando"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 glass rounded-full hover:bg-primary/20 transition-all duration-300"
+              >
+                <Twitter size={20} />
+              </a>
             </div>
           </div>
-        </div>
 
-        <div className="grid gap-6 mt-4 md:flex md:items-center md:gap-8 text-xl text-white">
-          <span>Alerrando © 2023</span>
-          <span>Obrigado por acessar</span>
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit(submit)}
+            className="glass p-6 rounded-lg shadow-lg opacity-0"
+          >
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-1">
+                  Nome
+                </label>
+                <Input
+                  {...register("name")}
+                  placeholder="Seu nome"
+                  required
+                  className="bg-secondary/30 border-white/10 focus:border-primary"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-1">
+                  Email
+                </label>
+                <Input
+                  {...register("email")}
+                  type="email"
+                  placeholder="Seu e -mail"
+                  required
+                  className="bg-secondary/30 border-white/10 focus:border-primary"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-1">
+                  Mensagem
+                </label>
+                <Textarea
+                  {...register("description")}
+                  placeholder="Sua mensagem"
+                  required
+                  className="bg-secondary/30 border-white/10 focus:border-primary h-32"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary/90 hover:bg-primary text-white transition-all duration-300 shadow-[0_0_15px_rgba(79,70,229,0.4)] hover:shadow-[0_0_25px_rgba(79,70,229,0.6)]"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
-    </footer>
+    </section>
   );
-
-    async function submit(e: SchemaDataType){
-      const aux = await axios.post("https://formspree.io/f/mleyvvga", e)
-        .then((res) => res.data)
-        .catch((err) => console.log(err))
-
-      if(aux.ok){
-        toast.success("Mensagem enviada com sucesso!", {
-          position: "bottom-left",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          });
-      }
-      else{
-        toast.error("Erro ao enviar mensagem!", {
-          position: "bottom-left",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      }
-    }
 }
